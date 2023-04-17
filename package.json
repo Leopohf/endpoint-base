@@ -1,0 +1,11 @@
+{
+  "name": "odds-project",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/Leopohf/odds-project.git",
+  "author": "Jorge Leonardo Hernandez Fajardo <leopohf@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
