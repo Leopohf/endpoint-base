@@ -1,6 +1,8 @@
 import express from 'express';
 
+// Create a new express app instance
 const app: express.Application = express();
+// set  port, listen for requests
 const port: number = 3000;
 
 app.get('/', (req: express.Request, res: express.Response) => {
