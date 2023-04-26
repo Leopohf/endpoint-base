@@ -3,8 +3,8 @@
   "version": "0.0.2",
   "main": "index.js",
   "scripts": {
-    "devBuild" : "tsc --watch",
-    "start": "nodemon ./build/index.js"
+    "devBuild": "tsc --watch",
+    "start": "node --watch ./build/index.js"
   },
   "repository": "https://github.com/Leopohf/odds-project.git",
   "author": "Jorge Leonardo Hernandez Fajardo <leopohf@gmail.com>",
@@ -15,7 +15,6 @@
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^18.15.11",
-    "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   }
