@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node ./build/index.js"
+    "devBuild" : "tsc --watch",
+    "start": "nodemon ./build/index.js"
   },
   "repository": "https://github.com/Leopohf/odds-project.git",
   "author": "Jorge Leonardo Hernandez Fajardo <leopohf@gmail.com>",
