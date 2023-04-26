@@ -1,4 +1,4 @@
-import { CommonRoutesConfig } from './common.routes.config';
+import { CommonRoutesConfig } from '../common/common.routes.config';
 import express from 'express';
 
 export class MathRoutesConfig extends CommonRoutesConfig {
