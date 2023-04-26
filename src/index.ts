@@ -20,7 +20,7 @@ app.get('/add/:a/:b', (req: express.Request, res: express.Response) => {
   res.send(`${req.params.a} + ${req.params.b} = ${ans}`);
 });
 
-// endpoint to sub two values
+// endpoint to substract two values
 app.get('/sub/:a/:b', (req: express.Request, res: express.Response) => {
   console.log("Entering to sub");
   let ans = Number.parseFloat(req.params.a) - Number.parseFloat(req.params.b);
