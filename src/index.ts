@@ -13,15 +13,46 @@ app.all('*', (req: express.Request, res: express.Response, next: express.NextFun
     next();
 });
 
-// basic get hello world response
-app.get('/', (req: express.Request, res: express.Response) => {
-  console.log("Entering to root");
-  res.send(`Hello World!`);
+// endpoint to add two values
+app.get('/add/:a/:b', (req: express.Request, res: express.Response) => {
+  console.log("Entering to add");
+  let ans = Number.parseFloat(req.params.a) + Number.parseFloat(req.params.b);
+  res.send(`${req.params.a} + ${req.params.b} = ${ans}`);
 });
 
-app.get('/col', (req: express.Request, res: express.Response) => {
-  console.log("Entering to col");
-  res.send(`Hello from Col`);
+// endpoint to sub two values
+app.get('/sub/:a/:b', (req: express.Request, res: express.Response) => {
+  console.log("Entering to sub");
+  let ans = Number.parseFloat(req.params.a) - Number.parseFloat(req.params.b);
+  res.send(`${req.params.a} - ${req.params.b} = ${ans}`);
+});
+
+// endpoint to multiply two values
+app.get('/mul/:a/:b', (req: express.Request, res: express.Response) => {
+  console.log("Entering to mul");
+  let ans = Number.parseFloat(req.params.a) * Number.parseFloat(req.params.b);
+  res.send(`${req.params.a} * ${req.params.b} = ${ans}`);
+});
+
+// endpoint to divide two values
+app.get('/div/:a/:b', (req: express.Request, res: express.Response) => {
+  console.log("Entering to div");
+  let ans = Number.parseFloat(req.params.a) / Number.parseFloat(req.params.b);
+  res.send(`${req.params.a} / ${req.params.b} = ${ans}`);
+});
+
+// endpoint to calculate square root
+app.get('/sqrt/:a', (req: express.Request, res: express.Response) => {
+  console.log("Entering to sqrt");
+  let ans = Math.sqrt(Number.parseFloat(req.params.a));
+  res.send(`sqrt(${req.params.a}) = ${ans}`);
+});
+
+// endpoint to calculate power
+app.get('/pow/:a/:b', (req: express.Request, res: express.Response) => {
+  console.log("Entering to pow");
+  let ans = Math.pow(Number.parseFloat(req.params.a), Number.parseFloat(req.params.b));
+  res.send(`${req.params.a} ^ ${req.params.b} = ${ans}`);
 });
 
 // start server
