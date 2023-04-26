@@ -1,9 +1,9 @@
 {
   "name": "odds-project",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "scripts": {
-    "devBuild" : "tsc --watch",
+    "devBuild": "tsc --watch",
     "start": "nodemon ./build/index.js"
   },
   "repository": "https://github.com/Leopohf/odds-project.git",
