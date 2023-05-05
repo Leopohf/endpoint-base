@@ -7,4 +7,8 @@ export class MathRoutesConfig extends CommonRoutesConfig {
         super(app, 'MathRoutes');
     }
 
+    configureRoutes(): express.Application {
+        return this.app;
+    }
+
 }
