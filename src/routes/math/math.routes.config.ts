@@ -8,6 +8,9 @@ export class MathRoutesConfig extends CommonRoutesConfig {
     }
 
     configureRoutes(): express.Application {
+
+        // route handlers
+        // basic add, subtract, multiply, divide operations
         this.app.route('/math/add')
             .get((req: express.Request, res: express.Response) => {
                 const { a, b } = req.body;
@@ -31,7 +34,7 @@ export class MathRoutesConfig extends CommonRoutesConfig {
                 const { a, b } = req.body;
                 res.status(200).send({ result: a / b });
             });
-        
+
         return this.app;
     }
 
