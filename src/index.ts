@@ -1,9 +1,16 @@
 import express from 'express';
+import * as https from 'https';
+
+import { CommonRoutesConfig } from './routes/common/common.routes.config';
 
 // Create a new express app instance
 const app: express.Application = express();
-// set  port, listen for requests
+// Create server
+const server = https.createServer(app);
+// set port, listen for requests
 const port: number = 3000;
+// Create a set of routes
+const routes: Array<CommonRoutesConfig> = [];
 
 // catch all request
 app.all('*', (req: express.Request, res: express.Response, next: express.NextFunction) => {
