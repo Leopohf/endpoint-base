@@ -22,6 +22,7 @@ app.use(express.json());
 // adding routes to the app
 routes.push(new MathRoutesConfig(app));
 
+// starting server and listening for request on port 3000
 server.listen(port, () => {
   routes.forEach((route: CommonRoutesConfig) => {
     debugLog(`Routes configured for ${route.getName()}`);
