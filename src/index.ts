@@ -1,5 +1,5 @@
 import express from 'express';
-import * as https from 'https';
+import * as http from 'http';
 import debug from 'debug';
 
 import { CommonRoutesConfig } from './routes/common/common.routes.config';
@@ -8,7 +8,7 @@ import { MathRoutesConfig } from './routes/math/math.routes.config';
 // Create a new express app instance
 const app: express.Application = express();
 // Create server
-const server = https.createServer(app);
+const server = http.createServer(app);
 // set port, listen for requests
 const port: number = 3000;
 // Create a set of routes
