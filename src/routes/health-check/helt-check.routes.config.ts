@@ -6,10 +6,11 @@ export class HealtCheck extends CommonRoutesConfig {
     super(app, "HealtCheck");
   }
 
-  configureRoutes() {
-    this.app.route("/healthcheck").get((req: express.Request, res: express.Response) => {
-      res.status(200).send("OK");
-    });
+  configureRoutes(): express.Application {
+    this.app.route('/health')
+        .get((req: express.Request, res: express.Response) => {
+            res.status(200).send("SUCCESS");
+        });
 
     return this.app;
   }
