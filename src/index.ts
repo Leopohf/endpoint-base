@@ -4,6 +4,7 @@ import debug from 'debug';
 
 import { CommonRoutesConfig } from './routes/common/common.routes.config';
 import { MathRoutesConfig } from './routes/math/math.routes.config';
+import { HealtCheck } from './routes/health-check/helt-check.routes.config';
 
 // Create a new express app instance
 const app: express.Application = express();
@@ -21,6 +22,7 @@ app.use(express.json());
 
 // adding routes to the app
 routes.push(new MathRoutesConfig(app));
+routes.push(new HealtCheck(app));
 
 // starting server and listening for request on port 3000
 server.listen(port, () => {
