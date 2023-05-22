@@ -1,7 +1,7 @@
 # About this
 This changelog is intended to keep track of my progress and record why I changed the project while I work on it
 
-## [Unreleased]
+## [0.0.4]
 - create healthcheck endpoint
 - handle non existing routes
 - improve common routing to avoid repeated routes
