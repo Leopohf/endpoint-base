@@ -1,0 +1,1 @@
+export type status = 200 | 404 ;
