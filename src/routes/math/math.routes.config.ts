@@ -3,6 +3,7 @@ import express from 'express';
 import { MathSingleOperation } from '../../models/in/math-single-operation.dto';
 import { MathSingleResult } from '../../models/out/math-single-result.dto';
 import { Result } from '../../models/out/result.dto';
+import { status } from '../../models/constants/status.type';
 
 export class MathRoutesConfig extends CommonRoutesConfig {
 
@@ -19,36 +20,39 @@ export class MathRoutesConfig extends CommonRoutesConfig {
         this.app.route(`${MathRoutesConfig.ROUTE_MATH_PREFIX}/add`)
             .get((req: express.Request, res: express.Response) => {
                 const operators: MathSingleOperation = req.body;
-                const data: MathSingleResult = { result: operators.operator1 + operators.operator2 };
-                const response: Result = { data: data, statusCode: 200 };
-                res.status(response.statusCode).send(response);
+                const result: Result = this.formatResponse({ result: operators.operator1 + operators.operator2 }, 200);
+                res.status(result.statusCode).send(result);
             });
 
         this.app.route(`${MathRoutesConfig.ROUTE_MATH_PREFIX}/subtract`)
             .get((req: express.Request, res: express.Response) => {
                 const operators: MathSingleOperation = req.body;
-                const data: MathSingleResult = { result: operators.operator1 - operators.operator2 };
-                const response: Result = { data: data, statusCode: 200 };
-                res.status(response.statusCode).send(response);
+                const result: Result = this.formatResponse({ result: operators.operator1 - operators.operator2 }, 200);
+                res.status(result.statusCode).send(result);
             });
 
         this.app.route(`${MathRoutesConfig.ROUTE_MATH_PREFIX}/multiply`)
             .get((req: express.Request, res: express.Response) => {
                 const operators: MathSingleOperation = req.body;
-                const data: MathSingleResult = { result: operators.operator1 * operators.operator2 };
-                const response: Result = { data: data, statusCode: 200 };
-                res.status(response.statusCode).send(response);
+                const result: Result = this.formatResponse({ result: operators.operator1 * operators.operator2 }, 200);
+                res.status(result.statusCode).send(result);
             });
 
         this.app.route(`${MathRoutesConfig.ROUTE_MATH_PREFIX}/divide`)
             .get((req: express.Request, res: express.Response) => {
                 const operators: MathSingleOperation = req.body;
-                const data: MathSingleResult = { result: operators.operator1 / operators.operator2 };
-                const response: Result = { data: data, statusCode: 200 };
-                res.status(response.statusCode).send(response);
+                const result: Result = this.formatResponse({ result: operators.operator1 / operators.operator2 }, 200);
+                res.status(result.statusCode).send(result);
             });
 
         return this.app;
     }
 
+    private formatResponse(data: MathSingleResult, statusCode: status, errorMessage?: string): Result {
+        return {
+            data: data,
+            statusCode: statusCode,
+            errorMessage: errorMessage
+        };
+    }
 }
