@@ -1,11 +1,7 @@
 import { CommonRoutesConfig } from '../common/common.routes.config';
 import express from 'express';
-import { MathSingleOperation } from '../../models/in/math-single-operation.dto';
-import { MathSingleResult } from '../../models/out/math-single-result.dto';
-import { Result } from '../../models/out/result.dto';
-import { Status } from '../../models/constants/status.type'; '../../models/constants/status.type';
-import { MathMultipleResult } from '../../models/out/math-multiple-result.dto';
-import { MathMultipleOperation } from '../../models/in/math-multiple-operation.dto';
+
+import MathController  from '../../controllers/math-operation.controller';
 
 export class MathRoutesConfig extends CommonRoutesConfig {
 
@@ -21,70 +17,42 @@ export class MathRoutesConfig extends CommonRoutesConfig {
 
         // route handlers
         // basic add, subtract, multiply, divide operations
-        this.app.route(`${MathRoutesConfig.ROUTE_MATH_PREFIX + MathRoutesConfig.ROUTE_MATH_SINGLE_PREFIX}/add`)
-            .get((req: express.Request, res: express.Response) => {
-                const operators: MathSingleOperation = req.body;
-                const result: Result = this.formatResponse({ result: operators.operator1 + operators.operator2 });
-                res.status(Status.SUCCESS).send(result);
-            });
+        const SINGLE_ROUTE = `${MathRoutesConfig.ROUTE_MATH_PREFIX + MathRoutesConfig.ROUTE_MATH_SINGLE_PREFIX}`;
+        this.app
+            .route(`${SINGLE_ROUTE}/add`)
+            .get(MathController.singleAdd);
 
-        this.app.route(`${MathRoutesConfig.ROUTE_MATH_PREFIX + MathRoutesConfig.ROUTE_MATH_SINGLE_PREFIX}/subtract`)
-            .get((req: express.Request, res: express.Response) => {
-                const operators: MathSingleOperation = req.body;
-                const result: Result = this.formatResponse({ result: operators.operator1 - operators.operator2 });
-                res.status(Status.SUCCESS).send(result);
-            });
+        this.app
+            .route(`${SINGLE_ROUTE}/subtract`)
+            .get(MathController.singleSubtract);
 
-        this.app.route(`${MathRoutesConfig.ROUTE_MATH_PREFIX + MathRoutesConfig.ROUTE_MATH_SINGLE_PREFIX}/multiply`)
-            .get((req: express.Request, res: express.Response) => {
-                const operators: MathSingleOperation = req.body;
-                const result: Result = this.formatResponse({ result: operators.operator1 * operators.operator2 });
-                res.status(Status.SUCCESS).send(result);
-            });
+        this.app
+            .route(`${SINGLE_ROUTE}/multiply`)
+            .get(MathController.singleMultiply);
 
-        this.app.route(`${MathRoutesConfig.ROUTE_MATH_PREFIX + MathRoutesConfig.ROUTE_MATH_SINGLE_PREFIX}/divide`)
-            .get((req: express.Request, res: express.Response) => {
-                const operators: MathSingleOperation = req.body;
-                const result: Result = this.formatResponse({ result: operators.operator1 / operators.operator2 });
-                res.status(Status.SUCCESS).send(result);
-            });
+        this.app
+            .route(`${SINGLE_ROUTE}/divide`)
+            .get(MathController.singleDivide);
 
         // multiple operations in one request
-        this.app.route(`${MathRoutesConfig.ROUTE_MATH_PREFIX + MathRoutesConfig.ROUTE_MATH_MULTIPLE_PREFIX}/add`)
-            .get((req: express.Request, res: express.Response) => {
-                const operators: MathMultipleOperation = req.body;
-                const result: Result = this.formatResponse({results: operators.operations.map(o => o.operator1 + o.operator2)});
-                res.status(Status.SUCCESS).send(result);
-            });
+        const MULTIPLE_ROUTE = `${MathRoutesConfig.ROUTE_MATH_PREFIX + MathRoutesConfig.ROUTE_MATH_MULTIPLE_PREFIX}`;
+        this.app
+            .route(`${MULTIPLE_ROUTE}/add`)
+            .get(MathController.multipleAdd);
 
-        this.app.route(`${MathRoutesConfig.ROUTE_MATH_PREFIX + MathRoutesConfig.ROUTE_MATH_MULTIPLE_PREFIX}/subtract`)
-            .get((req: express.Request, res: express.Response) => {
-                const operators: MathMultipleOperation = req.body;
-                const result: Result = this.formatResponse({results: operators.operations.map(o => o.operator1 - o.operator2)});
-                res.status(Status.SUCCESS).send(result);
-            });
+        this.app
+            .route(`${MULTIPLE_ROUTE}/subtract`)
+            .get(MathController.multipleSubtract);
 
-        this.app.route(`${MathRoutesConfig.ROUTE_MATH_PREFIX + MathRoutesConfig.ROUTE_MATH_MULTIPLE_PREFIX}/multiply`)
-            .get((req: express.Request, res: express.Response) => {
-                const operators: MathMultipleOperation = req.body;
-                const result: Result = this.formatResponse({results: operators.operations.map(o => o.operator1 * o.operator2)});
-                res.status(Status.SUCCESS).send(result);
-            });
+        this.app
+            .route(`${MULTIPLE_ROUTE}/multiply`)
+            .get(MathController.multipleMultiply);
 
-        this.app.route(`${MathRoutesConfig.ROUTE_MATH_PREFIX + MathRoutesConfig.ROUTE_MATH_MULTIPLE_PREFIX}/divide`)
-            .get((req: express.Request, res: express.Response) => {
-                const operators: MathMultipleOperation = req.body;
-                const result: Result = this.formatResponse({results: operators.operations.map(o => o.operator1 / o.operator2)});
-                res.status(Status.SUCCESS).send(result);
-            });
+        this.app
+            .route(`${MULTIPLE_ROUTE}/divide`)
+            .get(MathController.multipleDivide);
 
         return this.app;
     }
 
-    private formatResponse(data: MathSingleResult| MathMultipleResult, errorMessage?: string): Result {
-        return {
-            data: data,
-            errorMessage: errorMessage
-        };
-    }
 }
