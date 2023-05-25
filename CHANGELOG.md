@@ -2,6 +2,11 @@
 This changelog is intended to keep track of my progress and record why I changed the project while I work on it
 
 ## [Unreleased]
+- include testing
+- postman
+- docker
+## [0.0.5] - 2023-05-24
+### Added
 - error hanling
 - DTOs
 
