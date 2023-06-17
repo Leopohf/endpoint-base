@@ -21,3 +21,6 @@ To continue with the development asisted by an AI with low cost I will continue 
 
 ## Security
 I understand that copilot is a tool that may deliver unsecure code more often but this is not a project to check that so this is a low priority element and I will not focus on this for some time. This does not mean this could not change in the future.
+
+## Postman
+I created this basic [Postman collection](https://leopohf-team.postman.co/workspace/Leopohf-team-Workspace~c9461970-0c08-4cb3-82b2-24e6613c02dd/collection/4873256-a408cc28-f7f2-4a4d-950e-24306189065a?action=share&creator=4873256) to manually test the endpoints I created. The main intention of this to be able to interact with the project and keep it updated when new development is added.
