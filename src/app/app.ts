@@ -49,6 +49,11 @@ class App {
         });
         console.log(`Server running at http://localhost:${this.port}`);
     }
+
+    public stop(): void {
+        this.server.close();
+        console.log(`Server stopped at http://localhost:${this.port}`);
+    }
 }
 
 export default App;
