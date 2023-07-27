@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "a408cc28-f7f2-4a4d-950e-24306189065a",
+		"name": "Basic server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4873256",
+		"_collection_link": "https://leopohf-team.postman.co/workspace/Leopohf-team-Workspace~c9461970-0c08-4cb3-82b2-24e6613c02dd/collection/4873256-a408cc28-f7f2-4a4d-950e-24306189065a?action=share&creator=4873256&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Math Server",
+			"item": [
+				{
+					"name": "Single",
+					"item": [
+						{
+							"name": "add",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operator1\": 1,\n    \"operator2\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/math/single/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"math",
+										"single",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "multiply",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operator1\": 2,\n    \"operator2\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/math/single/multiply",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"math",
+										"single",
+										"multiply"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "subtract",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operator1\": 2,\n    \"operator2\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/math/single/subtract",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"math",
+										"single",
+										"subtract"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "divide",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operator1\": 1,\n    \"operator2\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/math/single/divide",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"math",
+										"single",
+										"divide"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Multiple",
+					"item": [
+						{
+							"name": "add",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operations\": [\n        {\n            \"operator1\": 1,\n            \"operator2\": 2\n        },\n        {\n            \"operator1\": 3,\n            \"operator2\": 4\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/math/multiple/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"math",
+										"multiple",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "subtract",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operations\": [\n        {\n            \"operator1\": 2,\n            \"operator2\": 1\n        },\n        {\n            \"operator1\": 5,\n            \"operator2\": 3\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/math/multiple/subtract",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"math",
+										"multiple",
+										"subtract"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "multiply",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operations\": [\n        {\n            \"operator1\": 1,\n            \"operator2\": 2\n        },\n        {\n            \"operator1\": 3,\n            \"operator2\": 4\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/math/multiple/multiply",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"math",
+										"multiple",
+										"multiply"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "divide",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operations\": [\n        {\n            \"operator1\": 2,\n            \"operator2\": 1\n        },\n        {\n            \"operator1\": 3,\n            \"operator2\": 4\n        },\n        {\n            \"operator1\": 1,\n            \"operator2\": 0\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/math/multiple/divide",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"math",
+										"multiple",
+										"divide"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Health-check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Not-found check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
