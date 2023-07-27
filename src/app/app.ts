@@ -42,7 +42,7 @@ class App {
 
     // starting server and listening for request on defined port
     public startServer(): void {
-        this.server.listen(this.port, this.setRoutes);
+        this.server.listen(this.port, this.setRoutes());
         console.log(`Server running at http://localhost:${this.port}`);
     }
 
