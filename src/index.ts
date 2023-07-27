@@ -5,4 +5,4 @@ const app: App = new App({
 });
 
 // starting server and listening for request on port 3000
-app.listen();
+app.startServer();
