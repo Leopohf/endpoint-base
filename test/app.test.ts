@@ -22,11 +22,4 @@ describe("App test: ", () => {
         app.startServer();
         expect(serverSpy).toBeCalled();
     });
-
-    // I am not happy with this approach but have not found the correct way to do it and I would like to move to something else
-    it(`must set routes`, () => {
-        const serverSpy = jest.spyOn(app, "setRoutes");
-        app.setRoutes();
-        expect(serverSpy).toBeCalled();
-    });
 });
