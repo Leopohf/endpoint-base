@@ -47,7 +47,7 @@ class App {
     }
 
     // define routes for the app
-    public setRoutes(): void {
+    private setRoutes(): void {
         this.routes.forEach((route: CommonRoutesConfig) => {
             this.debugLog(`Routes configured for ${route.getName()}`);
         });
