@@ -2,6 +2,11 @@
 This changelog is intended to keep track of my progress and record why I changed the project while I work on it
 
 ## [Unreleased]
+- improve testing
+- set environments
+- improve docker management (ports builds and environments)
+- start research to how to compress and deploy packaje on remote AWS service
+## [0.0.6] - 2023-07-30
 - include testing
 - postman
 - docker
